@@ -17,7 +17,7 @@ class PassengerListViewModel constructor(private val passengerRepository: Passen
 
     var passengerList = MutableLiveData<List<Passenger>>()
     private fun getPassengers() {
-        val request = passengerRepository.getAllPassengers(0, 10)
+        val request = passengerRepository.getPassengers(0, 20)
         request.enqueue(object : Callback<PassengersApiResponse> {
             override fun onResponse(
                 call: Call<PassengersApiResponse>,

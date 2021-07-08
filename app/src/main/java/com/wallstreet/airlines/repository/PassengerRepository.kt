@@ -16,7 +16,7 @@ class PassengerRepository constructor(
     private val passengerDao: PassengerDao,
     private val airlineDao: AirlineDao)  {
 
-    fun getAllPassengers(page: Int, size: Int) =
+    fun getPassengers(page: Int, size: Int) =
         retrofitService.createService(PassengerApi::class.java).getPassengerList(page, size)
 
     suspend fun insertPassengers(passengers: List<Passenger>) = withContext(Dispatchers.IO) {
